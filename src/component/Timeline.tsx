@@ -1,7 +1,7 @@
+import "./style.css";
 import Item, {ItemProps} from "./Item.tsx";
 import {ReactNode} from "react";
 import {AiOutlineHistory} from "react-icons/ai";
-
 export interface TimelineProps {
     items: ItemProps[];
     type?: 'left' | 'right' | 'both';

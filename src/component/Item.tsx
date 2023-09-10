@@ -1,6 +1,7 @@
+import "./style.css";
 import {tv} from "tailwind-variants";
 import {motion} from "framer-motion";
-import React from "react";
+import React, {ReactNode} from "react";
 import {AiOutlineHistory} from "react-icons/ai";
 import {twMerge} from "tailwind-merge";
 export interface Media {
@@ -12,7 +13,7 @@ export interface ItemData {
     title: string;
     time: string;
     side?: 'left' | 'right'|'both';
-    icon?: React.ReactNode;
+    icon?: ReactNode;
     content: string|React.ReactNode;
 }
 
