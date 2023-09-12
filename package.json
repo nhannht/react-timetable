@@ -2,12 +2,13 @@
   "name": "@nhannht/react-timetable",
   "author": "nhannht",
   "description": "A React component for rendering a timetable with customisable styles",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "type": "module",
   "files": [
     "dist"
   ],
   "module": "dist/index.js",
+  "main": "dist/index.js",
   "peerDependencies": {
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
@@ -21,7 +22,7 @@
   "packageManager": "yarn@1.22.17",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "tsc --noEmit && yarn run lint && rollup -c",
+    "build": "tsc --noEmit && yarn run lint && rm -rf dist && rollup -c",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
