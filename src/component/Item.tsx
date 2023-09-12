@@ -1,4 +1,3 @@
-import "./style.css";
 import {tv} from "tailwind-variants";
 import {motion} from "framer-motion";
 import React, {ReactNode} from "react";

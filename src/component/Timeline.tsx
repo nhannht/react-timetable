@@ -1,4 +1,3 @@
-import "./style.css";
 import Item, {ItemProps} from "./Item.tsx";
 import {ReactNode} from "react";
 import {AiOutlineHistory} from "react-icons/ai";
