@@ -8,7 +8,6 @@ import postcss from 'rollup-plugin-postcss';
 import tailwindcss from 'tailwindcss';
 import tailwindConfig from './tailwind.config.js';
 import autoprefixer from "autoprefixer";
-import babel from 'rollup-plugin-babel';
 
 let entries = Object.fromEntries(
     glob.sync('src/component/**/*.tsx').map(file => [
@@ -103,5 +102,17 @@ export default [
             'react-icons/ai',
             /node_modules/
         ]
-    }
+    },
+    {
+        input: "src/index.ts",
+        output: [
+            {
+                dir: 'dist/',
+                format: 'es',
+            }
+        ],
+        // This plugin will conflict with post css plugin if we not use exclude style file
+        external: [/\.css$/],
+        plugins: [dts()],
+    },
 ]

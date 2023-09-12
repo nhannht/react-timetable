@@ -24,7 +24,13 @@
     "build": "tsc --noEmit && yarn run lint && rollup -c",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "release:minor": "yarn version --minor",
+    "release:major": "yarn version --major",
+    "release:patch": "yarn version --patch",
+    "prerelease:minor": "yarn version --verion --preminor",
+    "prerelease:major": "yarn version --version --premajor",
+    "prerelease:patch": "yarn version --version --prepatch"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
