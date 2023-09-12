@@ -24,8 +24,8 @@ export default [
         input: entries,
         output: [
             {
-                dir: 'dist/component/esm',
-                format: 'esm',
+                dir: 'dist/component/',
+                format: 'es',
                 sourcemap: true,
             },
         ],
@@ -43,10 +43,6 @@ export default [
                 }
             ),
             typescript(),
-            /*babel({
-                exclude: 'node_modules/!**',
-                presets: ['@babel/preset-react'],
-            }),*/
             terser(),
         ],
         external: [
@@ -65,11 +61,47 @@ export default [
         output: [
             {
                 dir: 'dist/component/esm',
-                format: 'esm',
+                format: 'es',
             }
         ],
         // This plugin will conflict with post css plugin if we not use exclude style file
         external: [/\.css$/],
         plugins: [dts()],
     },
+    {
+        input: 'src/index.ts',
+        output: [
+            {
+                dir: 'dist',
+                format: 'es',
+                sourcemap: true,
+            },
+        ],
+        plugins: [
+            postcss(
+                {
+                    plugins: [
+                        autoprefixer(),
+                        tailwindcss(tailwindConfig),
+                    ],
+                    extract:true,
+                    minimize: true,
+                    extensions: ['.css'],
+                    sourceMap: true,
+                }
+            ),
+            typescript(),
+            terser(),
+        ],
+        external: [
+            'react',
+            'react-dom',
+            'react/jsx-runtime',
+            'framer-motion',
+            'tailwind-variants',
+            'tailwind-merge',
+            'react-icons/ai',
+            /node_modules/
+        ]
+    }
 ]
