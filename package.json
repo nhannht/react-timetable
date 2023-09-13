@@ -2,7 +2,7 @@
   "name": "@nhannht/react-timetable",
   "author": "nhannht",
   "description": "A React component for rendering a timetable with customisable styles",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "type": "module",
   "files": [
     "dist"
@@ -11,12 +11,8 @@
   "main": "dist/index.js",
   "styles": "dist/style.css",
   "peerDependencies": {
-    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0",
-    "tailwind-merge": "^1.14.0",
-    "tailwind-variants": "^0.1.14"
+    "react-dom": "^18.2.0"
   },
   "license": "MIT",
   "packageManager": "yarn@1.22.17",
