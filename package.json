@@ -2,7 +2,7 @@
   "name": "@nhannht/react-timetable",
   "author": "nhannht",
   "description": "A React component for rendering a timetable with customisable styles",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "type": "module",
   "files": [
     "dist"
