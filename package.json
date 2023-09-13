@@ -27,7 +27,8 @@
     "release:patch": "yarn version --patch",
     "prerelease:minor": "yarn version --verion --preminor",
     "prerelease:major": "yarn version --version --premajor",
-    "prerelease:patch": "yarn version --version --prepatch"
+    "prerelease:patch": "yarn version --version --prepatch",
+    "prepare": "husky install"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
@@ -63,6 +64,7 @@
     "eslint-plugin-storybook": "^0.6.13",
     "glob": "^10.3.4",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
     "postcss": "^8.4.29",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-dts": "^6.0.1",

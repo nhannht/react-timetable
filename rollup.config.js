@@ -8,6 +8,7 @@ import postcss from 'rollup-plugin-postcss';
 import tailwindcss from 'tailwindcss';
 import tailwindConfig from './tailwind.config.js';
 import autoprefixer from "autoprefixer";
+import resolve from '@rollup/plugin-node-resolve';
 
 let entries = Object.fromEntries(
     glob.sync('src/**/*.{ts,tsx}',{
@@ -28,7 +29,6 @@ export default [
             {
                 dir: 'dist/',
                 format: 'es',
-                sourcemap: true,
             },
         ],
         plugins: [
@@ -37,23 +37,18 @@ export default [
                     tailwindcss(tailwindConfig),
                     autoprefixer
                 ],
-                extract: path.resolve('dist/style.css'),
-                sourceMap: true,
                 minimize: true,
+                extract: path.resolve('dist/style.css')
             }),
             typescript(),
-            // terser(),
+            terser(),
+            resolve()
         ],
 
         external: [
             'react',
             'react-dom',
-            'react/jsx-runtime',
-            'framer-motion',
-            'tailwind-variants',
-            'tailwind-merge',
-            'react-icons/ai',
-            /node_modules/,
+            "react/jsx-runtime",
         ]
     },
     {
